@@ -1,0 +1,42 @@
+class Solution {
+public:
+    //USE INORDER TRAVERSAL STORE IT AND CHECK IF IT IS EQUAL TO THE SORTED VALUES...
+    //CHECK IF THEY ARE EQUAL..IF THEN NOT BST
+    
+    vector<int>elements;
+    void inorder(TreeNode * root)
+    {
+        if(root==NULL)  return ;
+
+        inorder(root->left);
+        elements.push_back(root->val);
+
+        inorder(root->right);
+    }
+    
+    //MAIN FUNCTION ;)
+    bool isValidBST(TreeNode* root) {
+        if(root==NULL)  return 1;
+        inorder(root);
+    
+        vector<int>check(elements.begin(),elements.end());
+
+    sort(check.begin(),check.end());
+    
+    for(int i=0;i<elements.size();i++)
+        if(check[i]!=elements[i])
+        {
+            return 0;   
+        }
+    
+    //If EQUAL THEN ALSO NOT BST
+    for(int i=0;i<elements.size()-1;i++)
+        {
+            //cout<<check[i]<<" "<<check[i+1]<<endl;
+            if(check[i]==check[i+1])
+                return 0;
+        }
+    
+    return 1;
+    }
+};

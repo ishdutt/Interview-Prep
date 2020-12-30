@@ -1,0 +1,7 @@
+1. It will be only be encountered in Interview only.
+2. Most of them are recursion based only(Atleast uptil now).
+3. So most of the question will be from GFG or leetcode. So sometimes, the code will have 
+   only the important function taken form those sites. Since creating tree makes the code long and 
+   are not fit for testing. Add the link of that question along witj the function. Better make the 
+   files as txt, in that way, there won't be any irritating marks.
+4. Caution.. take a lookm at where accesing using -> and where "." is used.. for complete DSA.

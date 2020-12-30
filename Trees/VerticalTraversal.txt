@@ -1,0 +1,90 @@
+//TODO: USING MAP AND PREORDER TRAVERAL... IT DOESN'T PRINT THE VALUES IN CORRECT SEQUENCE..
+//      COMPLEXITY IS O(NlogN) for map
+//      DOESN'T makes sure that nodes of a vertical line are printed in 
+//      the same order as they appear in the tree.
+class Solution {
+public:
+    map<int,vector<int>>m;
+    void solve(TreeNode * root,int hd)
+    {
+        if(root==NULL)  return ;
+        
+        m[hd].push_back(root->val);
+        solve(root->left,hd-1);
+        solve(root->right,hd+1);
+    }
+    
+    vector<vector<int>> verticalTraversal(TreeNode* root) {
+        vector<vector<int>>ans;
+        if(root==NULL)  return ans;
+        
+        //first is diff from root.. scond me vector daalenge jiska utna horizontal difference hai
+        
+        solve(root,0);
+        
+        for(auto it:m)
+        {
+            sort(it.second.begin(),it.second.end());
+            ans.push_back(it.second);
+        }
+        return ans;
+        
+    }
+};
+
+vector<vector<int>> verticalTraversal(TreeNode* root) {
+        vector<vector<int>>ans;
+        if(root==NULL)  return ans;
+        
+        //value with hd
+        queue<pair<TreeNode*,int>>q;
+        map<int,vector<int>>m;
+        int hd=0;
+        q.push(make_pair(root,hd));
+        while(!q.empty())
+        {
+            m[q.front().second].push_back(q.front().first->val);
+            
+            if(q.front().first->left!=NULL)
+                q.push(make_pair(q.front().first->left,q.front().second-1));
+            
+            if(q.front().first->right!=NULL)
+                q.push(make_pair(q.front().first->right,q.front().second+1));
+            q.pop();
+        }
+        
+        for(auto it:m)
+        {
+            ans.push_back(it.second);
+        }
+        return ans;
+    }
+
+vector<vector<int>> verticalTraversal(TreeNode* root) {
+        vector<vector<int>>ans;
+        if(root==NULL)  return ans;
+        
+        //value with hd
+        queue<pair<TreeNode*,pair<int,int>>>q;
+        map<int,vector<int>>m;
+        int hd=0;
+        int vd=0;
+        q.push(make_pair(root,make_pair(hd,vd)));
+        while(!q.empty())
+        {
+            m[q.front().second].push_back(q.front().first->val);
+            
+            if(q.front().first->left!=NULL)
+                q.push(make_pair(q.front().first->left,q.front().second-1));
+            
+            if(q.front().first->right!=NULL)
+                q.push(make_pair(q.front().first->right,q.front().second+1));
+            q.pop();
+        }
+        
+        for(auto it:m)
+        {
+            ans.push_back(it.second);
+        }
+        return ans;
+    }
