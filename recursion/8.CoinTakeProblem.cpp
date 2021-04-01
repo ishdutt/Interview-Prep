@@ -23,6 +23,9 @@ int coin(vector<int> a,int l,int r)
 
 
     //  THIS IS RECURSION BELIEVE -> JUST THINK RECURION WILL HANDLE THE STUFF FROM HERE
+    //  WE ARE CALCULATING THE MAX BY TAKING THE 2 SCENARIOS AND PREDICTING THE NEX MOVE OF OPPONENET AS
+    // WELL SUCH THAT WE GET THE MAX OUT OF ALL SCENARIOS
+    
     // hem = a[l]+min(coin(a,l+1,r-1),coin(a,l+2,r));
     // mu = a[r]+min(coin(a,l+1,r-1),coin(a,l,r-2));
     return max(a[l]+min(coin(a,l+1,r-1),coin(a,l+2,r)),   

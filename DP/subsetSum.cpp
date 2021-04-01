@@ -28,8 +28,6 @@ int check(vector<int>&a, int sum, vector<vector<int>>dp)
                 //HERE BOOLEAN VALUE SO.. WE TAKE OR INSTEAD OF MAX... IE. IF EITHER ONE IS TRUE WE TAKE THAT
                 else    dp[i][j]=dp[i-1][j] || dp[i-1][j-a[i-1]];
             }
-            
-           
         }
     }
 

@@ -64,6 +64,7 @@ int boxstacking(vector<int>height,vector<int>width,vector<int>length)
             orientations[i].first.second<orientations[j].first.second)
             {
                 //cout<<i<<" "<<j<<endl;
+                //IF MAX INCREASING SEQUENCE THEN YAHA PE 1 ADD HOTA INSTEAD OG HEIGHT
                 dp[i]=max(dp[i],dp[j]+orientations[i].second);
             }
         }

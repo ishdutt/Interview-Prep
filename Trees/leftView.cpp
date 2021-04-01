@@ -24,6 +24,7 @@ void leftview(node * root,int level,vector<int>ans)
 {
     if(root==NULL)  return ;
 
+    //THIS ENSURES THAT FIRST LEFT ELEMENT IS ADDED TO THE ANS VECTOR
     else if(ans.size()<level)   ans.push_back(root->data);
 
     //FIRST VISIT LEFT SINCE WE NEED LEFT MOST ELEMENT.. WHENEVER THE FIRST LEFT IS VISITED, LEVEL 

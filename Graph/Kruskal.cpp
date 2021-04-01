@@ -9,7 +9,7 @@ vector<int>size(1000,0);
 vector<int>rankOfnode(1000,0);
 
 int answer=0;
-
+    
 //FINDING THE PARENT OF THE GROUP OR SET.. 
 int find_parent(int x)
 {
@@ -76,7 +76,6 @@ int main()
             //result.push_back(a[i].second);
             union_group(edges[i].second.second,edges[i].second.first);
         }
-        
     }
     cout<<answer<<endl;
 }

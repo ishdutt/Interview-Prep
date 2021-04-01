@@ -63,8 +63,8 @@ int longestCommonSubstring(string s1,string s2,int n,int m,vector<vector<int>>&d
 
 int main()
 {
-    string s1="ANCDE";
-    string s2="ANDEANCDE";
+    string s1="KXCGMTMVVGFQQWSPD";
+    string s2="JXZADDUKVLQPKUZJZHWSUTPCAFSYAIBJHAMMEGWBTPQELRNKBLDXGUZGCSEC";
     
     //WE ARE HERE TOO MVING FROM BACK N-1th ELEMENT to 0th ELEMENT.
     

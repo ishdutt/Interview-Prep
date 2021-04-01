@@ -25,7 +25,7 @@ int countSubset(vector<int>&a, int sum ,vector<vector<int>>&dp)
                 if(a[i-1]>j)    dp[i][j]=dp[i-1][j];
 
                 //IF IT'S SIZE IF LESS THEN WE HAVE TWO PATHS.. TAKE IT OR LEAVE IT.. WE HAVE TO CONSIDER
-                // BOTH OPTIONS...JUST LIKE nCr
+                // BOTH OPTIONS...JUST LIKE nCr.. SUM RULE
                 else    dp[i][j] = dp[i-1][j] + dp[i-1][j-a[i-1]];
             }
         }

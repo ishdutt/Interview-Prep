@@ -47,25 +47,25 @@ int main()
         }
         
         //TESTING
-        priority_queue<int>temp1=maxheap;
+        // priority_queue<int>temp1=maxheap;
 
-        cout<<"MAX HEAP=";
-        while (!temp1.empty())
-        {
-            cout<<temp1.top()<<" ";
-            temp1.pop();
-        }
-        cout<<"\n";
+        // cout<<"MAX HEAP=";
+        // while (!temp1.empty())
+        // {
+        //     cout<<temp1.top()<<" ";
+        //     temp1.pop();
+        // }
+        // cout<<"\n";
 
-        priority_queue<int,vector<int>,greater<int>>temp2=minheap;
+        // priority_queue<int,vector<int>,greater<int>>temp2=minheap;
 
-        cout<<"MIN HEAP=";
-        while (!temp2.empty())
-        {
-            cout<<temp2.top()<<" ";
-            temp2.pop();
-        }
-        cout<<"\n";
+        // cout<<"MIN HEAP=";
+        // while (!temp2.empty())
+        // {
+        //     cout<<temp2.top()<<" ";
+        //     temp2.pop();
+        // }
+        // cout<<"\n";
 
 
 
